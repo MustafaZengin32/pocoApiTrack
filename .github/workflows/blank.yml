@@ -14,5 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: npm install -g @usebruno/cli
-    - name: run tests
+    - name: run bruno tests
+      working-directory: /musti
       run: bru run --env restfull
