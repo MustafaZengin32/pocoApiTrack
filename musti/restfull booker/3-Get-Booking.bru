@@ -5,7 +5,11 @@ meta {
 }
 
 get {
-  url: https://restful-booker.herokuapp.com/booking
+  url: {{host}}/booking
   body: none
   auth: none
+}
+
+assert {
+  res.status: eq 200
 }
