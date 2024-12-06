@@ -1,0 +1,25 @@
+meta {
+  name: 2-Question-Negative-Bottom
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://automationintesting.online/message/
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Ali Zengin",
+    "email": "phoenixoneday@protonmail.com",
+    "phone": "+410763759616",
+    "subject": "asss@gmail.com",
+    "description": "dsss"
+  }
+}
+
+assert {
+  res.status: eq 400
+}

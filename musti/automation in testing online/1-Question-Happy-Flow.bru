@@ -1,0 +1,25 @@
+meta {
+  name: 1-Question-Happy-Flow
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://automationintesting.online/message/
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Ali Zengin",
+    "email": "phoenixoneday@protonmail.com",
+    "phone": "+410763759616",
+    "subject": "asss@gmail.com",
+    "description": "dssssvgfdsfdgfdsa a dsadsadsa dsa dsadsadsa "
+  }
+}
+
+assert {
+  res.status: eq 201
+}
