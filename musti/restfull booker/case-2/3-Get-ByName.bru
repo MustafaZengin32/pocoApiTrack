@@ -14,3 +14,15 @@ params:query {
   firstname: {{firstname}}
   lastname: {{lastname}}
 }
+
+assert {
+  res.status: eq 200
+  res.body[0].bookingid: isNumber
+  res.body.length: eq 1
+}
+
+script:post-response {
+  console.log(res.body.length);
+  
+  
+}
