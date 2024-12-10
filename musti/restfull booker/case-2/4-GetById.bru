@@ -1,0 +1,22 @@
+meta {
+  name: 4-GetById
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{host}}/booking?firstname=Ali Mustafa&lastname=Zengin
+  body: none
+  auth: inherit
+}
+
+params:query {
+  firstname: Ali Mustafa
+  lastname: Zengin
+}
+
+assert {
+  res.status: eq 200
+  res.body[0].bookingid: isNumber
+  res.body.length: eq 1
+}

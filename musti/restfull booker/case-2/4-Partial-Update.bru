@@ -1,0 +1,29 @@
+meta {
+  name: 4-Partial-Update
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{host}}/booking/{{bookingid}}
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+  Cookie: token=abc123
+}
+
+body:json {
+  {
+    "firstname": "Ali Mustafa",
+    "lastname": "Zengin"
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.firstname: eq Ali Mustafa
+}

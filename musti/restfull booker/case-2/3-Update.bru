@@ -1,0 +1,37 @@
+meta {
+  name: 3-Update
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{host}}/booking/{{bookingid}}
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+  Cookie: token=abc123
+}
+
+body:json {
+  {
+    "firstname": "Michal",
+    "lastname": "Zima",
+    "totalprice": 111,
+    "depositpaid": true,
+    "bookingdates": {
+      "checkin": "2025-01-01",
+      "checkout": "2025-01-01"
+    },
+    "additionalneeds": "Doner"
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.firstname: eq Michal
+  res.body.bookingdates.checkin: eq 2025-01-01
+}
