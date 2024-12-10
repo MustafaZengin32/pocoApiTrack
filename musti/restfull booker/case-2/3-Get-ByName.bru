@@ -1,0 +1,16 @@
+meta {
+  name: 3-Get-ByName
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://restful-booker.herokuapp.com/booking?firstname={{firstname}}&lastname={{lastname}}
+  body: json
+  auth: none
+}
+
+params:query {
+  firstname: {{firstname}}
+  lastname: {{lastname}}
+}

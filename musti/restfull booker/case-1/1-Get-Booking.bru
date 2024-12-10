@@ -1,0 +1,15 @@
+meta {
+  name: 1-Get-Booking
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://automationintesting.online/
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+}
