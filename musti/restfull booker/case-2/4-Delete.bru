@@ -1,0 +1,21 @@
+meta {
+  name: 4-Delete
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{host}}/booking/{{bookingid}}
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Cookie: token=abc123
+}
+
+assert {
+  res.status: eq 201
+  res.body: eq Created
+}

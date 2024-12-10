@@ -1,0 +1,15 @@
+meta {
+  name: 5-Getid
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{host}}/booking/{{bookingid}}
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 404
+}

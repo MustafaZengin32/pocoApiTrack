@@ -5,7 +5,7 @@ meta {
 }
 
 get {
-  url: https://restful-booker.herokuapp.com/booking?firstname={{firstname}}&lastname={{lastname}}
+  url: {{host}}/booking?firstname={{firstname}}&lastname={{lastname}}
   body: json
   auth: none
 }
@@ -23,6 +23,10 @@ assert {
 
 script:post-response {
   console.log(res.body.length);
+  
+  console.log(res.body[0].bookingid);
+  
+  bru.setEnvVar("bookingid",res.body[0].bookingid);
   
   
 }
